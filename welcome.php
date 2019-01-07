@@ -12,11 +12,26 @@ $email = mysqli_real_escape_string($db,$_POST['email']);
 $password = mysqli_real_escape_string($db,$_POST['password']);
 //query
 $query = "SELECT * FROM todo WHERE email = '$email' AND password = '$password'";
-$row = mysqli_query($db, $query) or die('Error querying database.'); 
+$result = mysqli_query($db, $query);
 
-if ($row['email'] == '$email' && $row['password'] == '$password') {
-	echo "Login success";
+$num = mysqli_num_rows($result);
+
+if($num == 1){
+	
+	$_SESSION['email'] = $email;
+	$_SESSION['password'] = $password;
+	header('location:registration.php');
+
+
+}else{
+
+	header('location:login.php');
 }
-else {
-	echo "Failed to login";
-}
+//$row = mysqli_query($db, $query) or die('Error querying database.'); 
+
+//if ($row['email'] == '$email' && $row['password'] == '$password') {
+	//echo "Login success";
+//}
+//else {
+	//echo "Failed to login";
+//}
