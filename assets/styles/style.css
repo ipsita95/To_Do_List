@@ -1,0 +1,24 @@
+#read .container{
+	background: #e83e8c;
+	width: 50%;
+    min-height: 50%;
+    height: 80vh;
+    border-radius: 15px;
+}
+.form-control {
+	border-radius: 30px !important;
+}
+.card {
+	min-width: 40%;
+}
+h1 {
+	text-align: center;
+}
+.btn {
+	margin-left: 40%;
+}
+.login-wrapper {
+	background-color: cyan;
+	margin-top: 15%;
+	color: red;
+}
