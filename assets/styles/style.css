@@ -15,10 +15,27 @@ h1 {
 	text-align: center;
 }
 .btn {
-	margin-left: 40%;
+	width: 450px;
+    border-radius: 10px;
 }
 .login-wrapper {
 	background-color: cyan;
 	margin-top: 15%;
 	color: red;
+}
+.list-wrapper {
+	width: 50%;
+	background-color: cyan;
+	margin-top: 10%;
+}
+i {
+	font-size: 2rem;
+    color: white;
+}
+.list {
+	background-color: white;
+}
+.list i {
+	font-size: 2rem;
+    color: cyan;
 }

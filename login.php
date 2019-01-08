@@ -17,7 +17,7 @@
     <link href="assets/styles/style.css" rel="stylesheet">
   </head>
   <body>
-<form action="welcome.php" method="post">
+<form action="index.php" method="post">
     <div class="container  login-wrapper">
       <div class="row justify-content-center">
           <div class="card">
