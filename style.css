@@ -1,0 +1,50 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+#grad {
+  height: 200px;
+ background-image: linear-gradient(to right, rgba(51,255,252,0), rgba(51,255,212,1));
+}
+#read .container{
+	background: #e83e8c;
+	width: 50%;
+    min-height: 50%;
+    height: 80vh;
+    border-radius: 15px;
+}
+.form-control {
+	border-radius: 30px !important;
+}
+.card {
+	min-width: 40%;
+}
+h1 {
+	text-align: center;
+}
+.btn {
+	width: 450px;
+    border-radius: 10px;
+    border-color: #0A0909;
+    margin-top: 30px;
+    background-color: #33DAFF;
+}
+.login-wrapper {
+	background-color: #41DF9F;
+	margin-top: 15%;
+}
+.list-wrapper {
+	width: 50%;
+	background-color: cyan;
+	margin-top: 10%;
+}
+i {
+	font-size: 2rem;
+    color: white;
+}
+.list {
+	background-color: white;
+}
+.list i {
+	font-size: 2rem;
+    color: cyan;
+}

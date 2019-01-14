@@ -1,9 +1,83 @@
-#read .container{
-	background: #e83e8c;
-	width: 50%;
-    min-height: 50%;
-    height: 80vh;
-    border-radius: 15px;
+body {
+	font-family: 'Raleway', sans-serif;
+}
+/*register*/
+.register{
+  height: 100%;
+  background-repeat: no-repeat;
+  background:url('../img/todo.jpg');
+  background-size: cover;
+}
+
+.main{
+  margin:50px 55px;
+}
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 330px;
+  padding-top: 10px;
+  padding-left: 35px;
+  padding-bottom: 20px;
+  background:#009edf;
+  color: #FFF;
+  text-shadow: none;
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.70);
+
+}
+h5 {
+      margin-right: 25px;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}
+
+label{
+  margin-bottom: 15px;
+}
+.form-control {
+    height: auto!important;
+    padding: 8px 12px !important;
+}
+.input-group {
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+#register-button {
+    width:68%;
+    border: 1px solid #ccc;
+    margin-top: 28px;
+    margin-left: 23px;
+    padding: 6px 12px;
+    color: #666;
+    border-radius: 3px 3px;  
+}
+.input-group-addon {
+    color: white;
+    font-size: 17px;
+    width: 20%;
+    padding: 5%;
+}
+.login-button{
+  margin-top: 5px;
+}
+.login-register{
+  font-size: 11px;
+  text-align: center;
+}
+/*server*/
+.server {
+	margin-top: 20%;
+	
+}
+.smiley {
+	background-image: url('../img/smiley.jpg');
+  	background-repeat: no-repeat;
+}
+/*login*/
+#grad {
+  height: 200px;
+ background-image: linear-gradient(to right, rgba(51,255,252,0), rgba(51,255,212,1));
 }
 .form-control {
 	border-radius: 30px !important;
@@ -14,15 +88,29 @@
 h1 {
 	text-align: center;
 }
-.btn {
+.login-wrapper {
+	background-color: #41DF9F;
+	margin-top: 15%;
+	
+}
+#submit-button {
 	width: 450px;
     border-radius: 10px;
+    border-color: #0A0909;
+    margin-top: 30px;
+    background-color: #33DAFF;
 }
-.login-wrapper {
-	background-color: cyan;
-	margin-top: 15%;
-	color: red;
+/*
+#read .container{
+	background: #e83e8c;
+	width: 50%;
+    min-height: 50%;
+    height: 80vh;
+    border-radius: 15px;
 }
+
+
+
 .list-wrapper {
 	width: 50%;
 	background-color: cyan;
@@ -38,4 +126,4 @@ i {
 .list i {
 	font-size: 2rem;
     color: cyan;
-}
+}*/

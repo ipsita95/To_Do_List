@@ -31,11 +31,12 @@ mysqli_query($db, $query) or die('Error querying database.');
     <!-- Custom styles for this template -->
     <link href="assets/styles/style.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
+  <body class="smiley">
+    <div class="container server">
+      <div class="row justify-content-center">
     Hi, <?php echo $_POST["name"]; ?>
-    <a href="login.php">Login</a> to get started.
+    <br>
+    <a href="login.php">Login </a>to get started.
     </div>
     </div>
       

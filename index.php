@@ -20,12 +20,12 @@ if($num == 1){
 	
 	$_SESSION['email'] = $email;
 	$_SESSION['password'] = $password;
-	header('location:registration.php');
+	header('location:welcome.php');
 
 
 }else{
 
-	header('location:login.php');
+	header('location:login.php?error=invalidCred');
 }
 //$row = mysqli_query($db, $query) or die('Error querying database.'); 
 

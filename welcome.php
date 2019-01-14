@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$db = mysqli_connect('localhost','root','','task_db') or die ('Database not connected');
+if(isset($_POST['submit']))
+{
+  $task = $_POST['task'];
+  mysqli_query($db,"INSERT INTO task_table (task) VALUES ('$task')");
+}
+$task_table = mysqli_query($db, "SELECT * FROM task_table");
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,36 +28,21 @@
     <link href="assets/styles/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="contianer">
-      <div class="row justify-content-center">
-        <div class="card list-wrapper">
-          <div class="card-header">
-            <div class="row">
-              <div class="col-lg-11 col-md-9 col-sm-9">
-                <div class="form-group">
-              <input type="text" class="form-control" placeholder="Enter your list"></div>
-              </div>
-              <div class="col-lg-1 col-md-3 col-sm-3"><i class="fas fa-plus-circle"></i></div>
-            </div>
-          </div>
-          <div class="card-body list">
-            <div class="row">
-              <div class="col-lg-11 col-md-9 col-sm-9">
-               <table>
-                 <tr>
-                   <td>
-                     
-                   </td>
-                 </tr>
-               </table>
-              </div>
-              <div class="col-lg-1 col-md-3 col-sm-3"><i class="far fa-trash-alt"></i></div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
+    <form action="welcome.php" method="post">
+      <input type="text" class="task_input" name="task">
+      <button class="task_btn" type="submit" name="submit">Add</button>
+    </form>
+    <table>
+      <tbody>
+        <?php while( $row = mysqli_fetch_array($task_table) ) { ?>
+        <tr>
+          <td class="task" ><?php echo $row['task']; ?>
+            <a href="deletepost.php?value=<?php echo $row['task']; ?>">Delete</a>
+          </td>
+        </tr>
+        <?php } ?>
+      </tbody>
+    </table>
    <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

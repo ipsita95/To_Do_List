@@ -13,40 +13,58 @@
     <link href="assets/styles/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
+  <!--font-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="assets/styles/style.css" rel="stylesheet">
   </head>
   <body>
-    <form action="server.php" method="post">
-    <div class="container mt-5">
+    <body class="register">
+    <div class="container main">
+      <div class="main-center">
       <div class="row justify-content-center">
-        <div class="card">
-          <div class="card-title">
-            <h1>Registration Form</h1>
-            <div class="card-body">
-              <div class="form-group">
+        <h5>Register ToDo</h5>
+      </div>
+      <form action="server.php" method="post">
+          <div class="row justify-content-center">
+            <div class="form-group">
                 <label for="name">Name</label>
-                <input class="form-control" type="text" name="name" placeholder="Enter name" required>
-                
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input class="form-control" type="text" name="name" placeholder="Enter name" required>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="name">Email</label>
-                <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
-                
+            </div>
+
+            <div class="form-group">
+              <label for="name">Email</label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                  <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
+                </div>
               </div>
-              <div class="form-group">
+            </div>
+
+            <div class="form-group">
                 <label for="name">Password</label>
-                <input class="form-control" type="password" name="password" placeholder="Enter Password" required>
-                
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input class="form-control" type="password" name="password" placeholder="Enter Password" required>
+                </div>
               </div>
-              <input type="submit" name="submit" class="btn btn-primary" value="Submit">
             </div>
           </div>
-        </div>
+            <div class="form-group ">
+              <input type="submit" name="submit" class="btn" value="Register" id="register-button">
+            </div>
+          </form>
       </div>
     </div>
-    </form>
- <script
+    <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>

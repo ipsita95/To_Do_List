@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -12,26 +13,34 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/styles/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
+  <!--font-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="assets/styles/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body id="grad">
+    <?php
+      if (isset($_GET['error'])) {
+        ?>
+          <h3>Invalid Credentials</h3>
+        <?php
+      }
+    ?>
 <form action="index.php" method="post">
-    <div class="container  login-wrapper">
+    <div class="container"> 
       <div class="row justify-content-center">
-          <div class="card">
+          <div class="card login-wrapper">
             <div class="card-title">
               <h1>Login</h1>
               <div class="card-body">
                 <div class="form-group">
-                  <label for="name">Email</label>
-                  <input type="email" class="form-control" name="email" placeholder="Enter your Email" required>
+                  <label for="name">Username</label>
+                  <input type="text" class="form-control" name="email" placeholder="Enter your Email" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Password</label>
                   <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
-                  <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+                  <input type="submit" name="submit" class="btn" value="Submit" id="submit-button">
                 </div>
               </div>
             </div>
