@@ -8,5 +8,5 @@ if(isset($_GET['value']))
   mysqli_query($db,"DELETE FROM `task_table` WHERE task='$task'");
 }
 // DELETE FROM `task_table` WHERE task='$task'
-header('Location: welcome_1.php');
+header('Location: welcome.php');
 ?>

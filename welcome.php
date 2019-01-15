@@ -29,20 +29,44 @@ $task_table = mysqli_query($db, "SELECT * FROM task_table");
   </head>
   <body>
     <form action="welcome.php" method="post">
-      <input type="text" class="task_input" name="task">
-      <button class="task_btn" type="submit" name="submit">Add</button>
-    </form>
-    <table>
-      <tbody>
-        <?php while( $row = mysqli_fetch_array($task_table) ) { ?>
-        <tr>
-          <td class="task" ><?php echo $row['task']; ?>
-            <a href="deletepost.php?value=<?php echo $row['task']; ?>">Delete</a>
-          </td>
-        </tr>
-        <?php } ?>
-      </tbody>
-    </table>
+    <div class="contianer">
+      <div class="row justify-content-center">
+        <div class="card list-wrapper">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-lg-11 col-md-9 col-sm-9">
+                <div class="form-group">
+              <input type="text" class="form-control task_input" placeholder="Enter your list" name="task"></div>
+              </div>
+              <div class="col-lg-1 col-md-3 col-sm-3"><button class="task_btn" type="submit" name="submit"><i class="fas fa-plus-circle"></i></button></div>
+            </div>
+          </div>
+          <div class="card-body list">
+            <div class="row">
+              <div class="col-lg-11 col-md-9 col-sm-9">
+               <table>
+                <tbody>
+                  <?php while( $row = mysqli_fetch_array($task_table) ) { ?>
+                 <tr>
+                   <td  class="task" ><?php echo $row['task']; ?>
+                   </td>
+                   <td>
+                    <div class="delete">
+                      <a href="deletepost.php?value=<?php echo $row['task']; ?>"><i class="far fa-trash-alt"></i></a>
+                    </div>
+                   </td>
+                 </tr>
+                 <?php } ?>
+                 </tbody>
+               </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </form>
    <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
