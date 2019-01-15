@@ -20,7 +20,7 @@ if($num == 1){
 	
 	$_SESSION['email'] = $email;
 	$_SESSION['password'] = $password;
-	header('location:welcome.php');
+	header('location:welcome_1.php');
 
 
 }else{

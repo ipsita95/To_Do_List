@@ -35,11 +35,11 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="name">Username</label>
-                  <input type="text" class="form-control" name="email" placeholder="Enter your Email" required>
+                  <input type="text" class="form-control login-form" name="email" placeholder="Enter your Email" required>
                 </div>
                 <div class="form-group">
                   <label for="name">Password</label>
-                  <input type="password" class="form-control" name="password" placeholder="Enter your password" required>
+                  <input type="password" class="form-control login-form" name="password" placeholder="Enter your password" required>
                   <input type="submit" name="submit" class="btn" value="Submit" id="submit-button">
                 </div>
               </div>

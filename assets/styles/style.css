@@ -44,10 +44,10 @@ label{
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
 }
 #register-button {
-    width:68%;
+    width:60%;
     border: 1px solid #ccc;
     margin-top: 28px;
-    margin-left: 23px;
+    margin-left: 35px;
     padding: 6px 12px;
     color: #666;
     border-radius: 3px 3px;  
@@ -79,7 +79,7 @@ label{
   height: 200px;
  background-image: linear-gradient(to right, rgba(51,255,252,0), rgba(51,255,212,1));
 }
-.form-control {
+.login-form {
 	border-radius: 30px !important;
 }
 .card {
@@ -100,6 +100,36 @@ h1 {
     margin-top: 30px;
     background-color: #33DAFF;
 }
+/*welcome*/
+.list-wrapper {
+	width: 50%;
+	background-color: cyan;
+	margin-top: 10%;
+}
+.task_btn {
+	font-size: 1.5rem;
+    color: cyan;
+    padding: 2px;
+    background: white;
+    border-radius: 10px;
+}
+.delete {
+	font-size: 1.5rem;
+    color: cyan;
+    padding: 2px;
+    background: white;
+    border-radius: 10px;
+}
+.list {
+	background-color: white;
+}
+.list i {
+	font-size: 2rem;
+    color: cyan;
+}
+tr {
+  background-color: #dddddd;
+}
 /*
 #read .container{
 	background: #e83e8c;
@@ -108,22 +138,4 @@ h1 {
     height: 80vh;
     border-radius: 15px;
 }
-
-
-
-.list-wrapper {
-	width: 50%;
-	background-color: cyan;
-	margin-top: 10%;
-}
-i {
-	font-size: 2rem;
-    color: white;
-}
-.list {
-	background-color: white;
-}
-.list i {
-	font-size: 2rem;
-    color: cyan;
-}*/
+*/
