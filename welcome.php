@@ -1,13 +1,40 @@
 <?php
 session_start();
 
+
 $db = mysqli_connect('localhost','root','','task_db') or die ('Database not connected');
+
+// Check if session is properly set or not
+if (isset($_SESSION['email'], $_SESSION['password'])) {
+  $email = $_SESSION['email'];
+  $password = $_SESSION['password'];
+  // Check if session data combi exists in db
+  $result =  mysqli_query($db,"SELECT * FROM `users` WHERE email = '$email' AND password = '$password'");
+  if (mysqli_num_rows($result) == 0) {
+    // Combi does not exist
+    session_destroy();
+    header("Location: login.php");
+  } else {
+    // Get user id
+    $user = mysqli_fetch_array($result);
+    // $user_id = $user[]
+    $user_id = $user['user_id'];
+  }
+
+} else {
+  // session does not exist
+  session_destroy();
+  header("Location: login.php");
+}
+
+// Create post
 if(isset($_POST['submit']))
 {
   $task = $_POST['task'];
-  mysqli_query($db,"INSERT INTO task_table (task) VALUES ('$task')");
+  mysqli_query($db,"INSERT INTO `tasks` (user_id, task_content) VALUES ('$user_id', '$task')");
 }
-$task_table = mysqli_query($db, "SELECT * FROM task_table");
+// Render tasks for current user
+$task_table = mysqli_query($db, "SELECT * FROM `tasks` WHERE user_id='$user_id'");
 ?>
 <!doctype html>
 <html lang="en">
@@ -23,11 +50,21 @@ $task_table = mysqli_query($db, "SELECT * FROM task_table");
     <!-- Bootstrap core CSS -->
     <link href="assets/styles/vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <!--font-->
+ <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="assets/styles/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body class="read">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-lg-10 col-md-10 col-sm-10">
+          <h3>TO-DO-LIST</h3>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2"><a href="logout.php"  id="logout">Logout</a></div>
+      </div>
+    </div>
     <form action="welcome.php" method="post">
     <div class="contianer">
       <div class="row justify-content-center">
@@ -46,17 +83,20 @@ $task_table = mysqli_query($db, "SELECT * FROM task_table");
               <div class="col-lg-11 col-md-9 col-sm-9">
                <table>
                 <tbody>
-                  <?php while( $row = mysqli_fetch_array($task_table) ) { ?>
+                  <?php if ($task_table != false) {
+                      while( $row = mysqli_fetch_array($task_table) ) {
+                   ?>
                  <tr>
-                   <td  class="task" ><?php echo $row['task']; ?>
+                   <td  class="task" ><?php echo $row['task_content']; ?>
                    </td>
                    <td>
                     <div class="delete">
-                      <a href="deletepost.php?value=<?php echo $row['task']; ?>"><i class="far fa-trash-alt"></i></a>
+                      <a href="deletepost.php?value=<?php echo $row['task_id']; ?>"><i class="far fa-trash-alt"></i></a>
                     </div>
                    </td>
                  </tr>
-                 <?php } ?>
+                 <?php }
+                 } ?>
                  </tbody>
                </table>
               </div>

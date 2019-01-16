@@ -5,8 +5,7 @@ $db = mysqli_connect('localhost','root','','task_db') or die ('Database not conn
 if(isset($_GET['value']))
 {
   $task = $_GET['value'];
-  mysqli_query($db,"DELETE FROM `task_table` WHERE task='$task'");
+  mysqli_query($db,"DELETE FROM `tasks` WHERE task_id='$task'");
 }
-// DELETE FROM `task_table` WHERE task='$task'
 header('Location: welcome.php');
 ?>
