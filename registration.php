@@ -34,6 +34,8 @@
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                   <input class="form-control" type="text" name="name" placeholder="Enter name" required>
+                  <?php if (isset($name_error)) ?>
+                  <span><?php echo $name_error; ?></span>
                 </div>
               </div>
             </div>
@@ -44,6 +46,8 @@
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
                   <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
+                  <?php if (isset($email_error)) ?>
+                  <span><?php echo $email_error; ?></span>
                 </div>
               </div>
             </div>
