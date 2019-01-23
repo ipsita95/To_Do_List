@@ -9,16 +9,13 @@ $db = mysqli_connect('localhost','root','','task_db') or die ('Database not conn
   $name = mysqli_real_escape_string($db,$_POST['name']);
   $email = mysqli_real_escape_string($db,$_POST['email']);
   $password = mysqli_real_escape_string($db,$_POST['password']);
-  //check if the name or email alreay exits
-  $sql_n = "SELECT * FROM users WHERE name='$name'";
+  //check if the email alreay exits
     $sql_e = "SELECT * FROM users WHERE email='$email'";
-    $res_n = mysqli_query($db, $sql_n) or die('error');
     $res_e = mysqli_query($db, $sql_e);
 
-    if (mysqli_num_rows($res_n) >= 1) {
-      $name_error = "Name already exists";  
-    }else if(mysqli_num_rows($res_e) >= 1){
-      $email_error = "Email already exists";  
+    if (mysqli_num_rows($res_e) >= 1) {
+      $email_error = "email already exists";
+      header("Location: registration.php");  
     }else{
 $query = "INSERT INTO users (name,email,password) VALUES ('$name','$email','$password')";
 mysqli_query($db, $query) or die('Error querying database.'); 

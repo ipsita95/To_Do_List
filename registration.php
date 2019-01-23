@@ -34,8 +34,6 @@
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
                   <input class="form-control" type="text" name="name" placeholder="Enter name" required>
-                  <?php if (isset($name_error)) ?>
-                  <span><?php echo $name_error; ?></span>
                 </div>
               </div>
             </div>
