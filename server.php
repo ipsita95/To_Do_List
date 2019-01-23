@@ -14,8 +14,7 @@ $db = mysqli_connect('localhost','root','','task_db') or die ('Database not conn
     $res_e = mysqli_query($db, $sql_e);
 
     if (mysqli_num_rows($res_e) >= 1) {
-      $email_error = "email already exists";
-      header("Location: registration.php");  
+      header("Location: registration.php?error=emailTaken");  
     }else{
 $query = "INSERT INTO users (name,email,password) VALUES ('$name','$email','$password')";
 mysqli_query($db, $query) or die('Error querying database.'); 

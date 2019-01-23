@@ -1,3 +1,4 @@
+ 
 <!doctype html>
 <html lang="en">
   <head>
@@ -37,19 +38,21 @@
                 </div>
               </div>
             </div>
-
+             
             <div class="form-group">
               <label for="name">Email</label>
               <div class="col-sm-10">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
                   <input class="form-control" type="email" name="email" placeholder="Enter Email" required>
-                  <?php if (isset($email_error)) ?>
-                  <span><?php echo $email_error; ?></span>
                 </div>
               </div>
             </div>
-
+               <?php if (isset($_GET['error'])) { ?>
+                    <p class="error_class">Email already exists.</p>
+                  <?php
+                }
+                ?>
             <div class="form-group">
                 <label for="name">Password</label>
               <div class="col-sm-10">
@@ -61,7 +64,9 @@
             </div>
           </div>
             <div class="form-group ">
+              <div class="col-sm-10">
               <input type="submit" name="submit" class="btn" value="Register" id="register-button">
+              </div>
             </div>
           </form>
       </div>

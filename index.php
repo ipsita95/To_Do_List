@@ -27,11 +27,3 @@ if($num == 1){
 
 	header('location:login.php?error=invalidCred');
 }
-//$row = mysqli_query($db, $query) or die('Error querying database.'); 
-
-//if ($row['email'] == '$email' && $row['password'] == '$password') {
-	//echo "Login success";
-//}
-//else {
-	//echo "Failed to login";
-//}
