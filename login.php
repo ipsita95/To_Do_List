@@ -31,7 +31,9 @@
       <div class="row justify-content-center">
           <div class="card login-wrapper">
             <div class="card-title">
-              <h1>Login</h1>
+              <div class="row justify-content-center">
+              <h4>Login</h4>
+              </div>
               <div class="card-body">
                 <div class="form-group">
                   <label for="name">Username</label>
